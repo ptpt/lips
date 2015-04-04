@@ -34,17 +34,17 @@ say('hello world');
 // #+endignore
 ```
 
-With the command below, we do 3 things:
+Run the command below, which does 3 things:
 
-1. uncomment it
+1. uncomment all comments in `say.js`
 2. highlight its code block, and
 3. ignore its test block
 
 ```
-uncomment.awk codeout="highlight.awk -vlang=javascript" examples/say.js | ignore.awk
+$ uncomment.awk codeout="highlight.awk -vlang=javascript" examples/say.js | ignore.awk
 ```
 
-It becomes a markdown documentation:
+It outputs a markdown documentation:
 ```markdown
 ## Your First Program
 
@@ -71,7 +71,8 @@ hello world
 
 It contains two commands `cat intro.md` and `uncomment.awk say.js ...`.
 
-`intro.md` looks like this:
+`intro.md` (it is also located under the folder `examples`) looks like
+this:
 ```
 ## Introduction
 
@@ -79,7 +80,7 @@ Programming is fun. In this article we are going to teach you how to
 program in JavaScript.
 ```
 
-Include them in `main.md` with one command:
+Include them in `examples/main.md` with one command:
 ```
 $ sh.awk examples/main.md
 ```

@@ -23,17 +23,17 @@ written in Markdown.
 #+sh cat examples/say.js
 ```
 
-With the command below, we do 3 things:
+Run the command below, which does 3 things:
 
-1. uncomment it
+1. uncomment all comments in `say.js`
 2. highlight its code block, and
 3. ignore its test block
 
 ```
-uncomment.awk codeout="highlight.awk -vlang=javascript" examples/say.js | ignore.awk
+$ uncomment.awk codeout="highlight.awk -vlang=javascript" examples/say.js | ignore.awk
 ```
 
-It becomes a markdown documentation:
+It outputs a markdown documentation:
 ```markdown
 #+sh ignore.awk examples/say.js | uncomment.awk codeout="highlight.awk -vlang=javascript"
 ```
@@ -46,12 +46,13 @@ We have a main markdown file `examples/main.md`:
 
 It contains two commands `cat intro.md` and `uncomment.awk say.js ...`.
 
-`intro.md` looks like this:
+`intro.md` (it is also located under the folder `examples`) looks like
+this:
 ```
 #+sh cat examples/intro.md
 ```
 
-Include them in `main.md` with one command:
+Include them in `examples/main.md` with one command:
 ```
 $ sh.awk examples/main.md
 ```
