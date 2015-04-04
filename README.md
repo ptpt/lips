@@ -24,10 +24,11 @@ written in Markdown.
 
 // `say` is a function that says something
 var say = function(something) {
+    // something goes to stdout
     console.log(something);
 };
 
-// #+ignore
+// #+ignore just put words below, I'll hide them for you
 // test it
 say('hello world');
 // #+endignore
@@ -50,6 +51,7 @@ It becomes a markdown documentation:
 `say` is a function that says something
 {% highlight javascript %}
 var say = function(something) {
+    // something goes to stdout
     console.log(something);
 };
 {% endhighlight %}
@@ -80,6 +82,10 @@ program in JavaScript.
 Include them in `main.md` with one command:
 ```
 $ sh.awk examples/main.md
+```
+
+It outputs:
+```markdown
 hello world
 ===========
 
@@ -93,6 +99,7 @@ program in JavaScript.
 `say` is a function that says something
 {% highlight javascript %}
 var say = function(something) {
+    // something goes to stdout
     console.log(something);
 };
 {% endhighlight %}
@@ -152,15 +159,16 @@ usage: fence.awk -vlang=LANG FILENAME
        highlight.awk -vlang=LANG FIELNAME
 ```
 
-Two helpers for generating markdown documentation. `fence.awk` wraps
-your code block with triple-backtick syntax, while `highlight.awk`
-wraps with `{% highlight LANG %}` and `{% endhighlight %}`.
+Two helpers for generating markdown documentation in collaborate with
+`uncomment.awk`. `fence.awk` wraps your code block with
+triple-backtick syntax, while `highlight.awk` wraps with `{% highlight
+LANG %}` and `{% endhighlight %}`.
 
 ## Development
 Some principles:
 
 - follow KISS
-- utilize tools installed on every UNIX-like machine, such as `awk`, `sed`, `sh`
+- utilize common UNIX tools such as `awk`, `sed`, `sh`
 - not exceed 128 LoC for each little program
 
 LoC of each program:

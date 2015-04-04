@@ -54,6 +54,10 @@ It contains two commands `cat intro.md` and `uncomment.awk say.js ...`.
 Include them in `main.md` with one command:
 ```
 $ sh.awk examples/main.md
+```
+
+It outputs:
+```markdown
 #+sh sh.awk examples/main.md
 ```
 
@@ -110,15 +114,16 @@ usage: fence.awk -vlang=LANG FILENAME
        highlight.awk -vlang=LANG FIELNAME
 ```
 
-Two helpers for generating markdown documentation. `fence.awk` wraps
-your code block with triple-backtick syntax, while `highlight.awk`
-wraps with `{% highlight LANG %}` and `{% endhighlight %}`.
+Two helpers for generating markdown documentation in collaborate with
+`uncomment.awk`. `fence.awk` wraps your code block with
+triple-backtick syntax, while `highlight.awk` wraps with `{% highlight
+LANG %}` and `{% endhighlight %}`.
 
 ## Development
 Some principles:
 
 - follow KISS
-- utilize tools installed on every UNIX-like machine, such as `awk`, `sed`, `sh`
+- utilize common UNIX tools such as `awk`, `sed`, `sh`
 - not exceed 128 LoC for each little program
 
 LoC of each program:
