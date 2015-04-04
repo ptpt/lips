@@ -90,16 +90,16 @@ usage: block.awk name=NAME FILENAME
 Print out a named block. A named block is a block between `#+block
 NAME` and `#+endblock`.
 
-### `fence.awk` and `highlight.awk`: fence your code block
+### `fence.awk` and `highlight.awk`: wrap your code block
 
 ```
 usage: fence.awk -vlang=LANG FILENAME
        highlight.awk -vlang=LANG FIELNAME
 ```
 
-`fence.awk` wraps your code block with `` ```LANG `` and `` ``` ``,
-while `highlight.awk` wraps with `{% highlight LANG
-%}` and `{% endhighlight %}`.
+`fence.awk` wraps your code block with triple-backtick syntax, while
+`highlight.awk` wraps with `{% highlight LANG %}` and `{% endhighlight
+%}`.
 
 
 ## License
