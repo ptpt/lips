@@ -1,0 +1,7 @@
+// I'm gonna show you something here
+
+// // this is a comment
+ // another comment
+var foo = 1;                    // inline comment
+//another comment because no space
+//after the comment delimiter

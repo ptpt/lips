@@ -1,0 +1,35 @@
+show how to use block
+
+this is a #+block function
+var foo = function () {
+    return 1;
+}
+this is a #+endblock
+
+#+block
+anonymous block
+#+endblock
+
+nested blocks:
+#+block root
+
+     #+block kid1
+     kid 1
+     #+endblock
+
+     #+block kid2
+     kid 2
+     #+endblock
+
+#+endblock
+
+#+block escape
+use \#+block to escape keyword
+use \#+endblock to escape keyword
+#+endblock
+
+#+block unfinished
+hello world
+#+block kid2
+ kid2 hello world
+#+endblock

@@ -1,0 +1,9 @@
+
+     #+block kid1
+     kid 1
+     #+endblock
+
+     #+block kid2
+     kid 2
+     #+endblock
+

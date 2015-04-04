@@ -1,0 +1,4 @@
+hello world
+#+block kid2
+ kid2 hello world
+#+endblock

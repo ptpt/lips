@@ -1,0 +1,5 @@
+hello, #+sh echo tao
+sort: #+sh echo -e "2\n3\n2\n9\n8" | sort
+
+\#+sh is escaped
+show \#+sh hello world

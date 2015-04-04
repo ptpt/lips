@@ -1,0 +1,25 @@
+#+ignoreline this line should be ignored
+// (#+ignoreline) should not be ignored
+let's #+ignoreline this line
+use \#+ignoreline to ignore lines
+use \\#+ignoreline to escape keywords
+end of #+ignoreline
+
+#+ignore
+ignore
+#+endignore
+
+no#+ignore
+this won't be ignored
+#+endignore
+
+this block should be ignored #+ignore #+ignoreline
+you can't see me
+use \#+endignore to escape endignore keyword
+#+endignore
+
+use \#+ignore to escape the endignore keyword
+use \#+endignore to escape the endignore keyword
+
+#+ignore
+hello world

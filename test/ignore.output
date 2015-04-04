@@ -1,0 +1,13 @@
+// (#+ignoreline) should not be ignored
+use #+ignoreline to ignore lines
+use \#+ignoreline to escape keywords
+
+
+no#+ignore
+this won't be ignored
+#+endignore
+
+
+use #+ignore to escape the endignore keyword
+use #+endignore to escape the endignore keyword
+
