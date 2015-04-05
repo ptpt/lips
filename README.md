@@ -69,7 +69,10 @@ hello world
 #+sh uncomment.awk codeout="highlight.sh javascript" say.js | ignore.awk
 ```
 
-It contains two commands `cat intro.md` and `uncomment.awk say.js ...`.
+Note that the special syntax `#+sh` is not a markdown syntax; it
+tells `lips/sh.awk` that here is a command, please execute the command
+and replace here with its output. This file contains two commands `cat
+intro.md` and `uncomment.awk say.js ...`.
 
 `intro.md` (it is also located under the folder `examples`) looks like
 this:
@@ -174,13 +177,13 @@ Some principles:
 
 LoC of each program:
 ```
-        fence.sh 9
-    highlight.sh 13
+        fence.sh 10
+    highlight.sh 14
       ignore.awk 22
        block.awk 27
           sh.awk 30
    uncomment.awk 66
-           total 167
+           total 169
 ```
 
 Runing tests:

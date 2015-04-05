@@ -44,7 +44,10 @@ We have a main markdown file `examples/main.md`:
 #+sh cat examples/main.md
 ```
 
-It contains two commands `cat intro.md` and `uncomment.awk say.js ...`.
+Note that the special syntax `\#+sh` is not a markdown syntax; it
+tells `lips/sh.awk` that here is a command, please execute the command
+and replace here with its output. This file contains two commands `cat
+intro.md` and `uncomment.awk say.js ...`.
 
 `intro.md` (it is also located under the folder `examples`) looks like
 this:
