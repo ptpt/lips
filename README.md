@@ -54,14 +54,13 @@ var say = function(something) {
     // something goes to stdout
     console.log(something);
 };
-
 {% endhighlight %}
 
 ```
 
 ### Include partials
 We have a main markdown file `examples/main.md`:
-```
+```markdown
 hello world
 ===========
 
@@ -74,7 +73,7 @@ It contains two commands `cat intro.md` and `uncomment.awk say.js ...`.
 
 `intro.md` (it is also located under the folder `examples`) looks like
 this:
-```
+```markdown
 ## Introduction
 
 Programming is fun. In this article we are going to teach you how to
@@ -104,7 +103,6 @@ var say = function(something) {
     // something goes to stdout
     console.log(something);
 };
-
 {% endhighlight %}
 
 ```
@@ -176,13 +174,13 @@ Some principles:
 
 LoC of each program:
 ```
-        fence.sh 10
-    highlight.sh 14
+        fence.sh 9
+    highlight.sh 13
       ignore.awk 22
        block.awk 27
           sh.awk 30
    uncomment.awk 66
-           total 169
+           total 167
 ```
 
 Runing tests:

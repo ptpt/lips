@@ -40,7 +40,7 @@ It outputs a markdown documentation:
 
 ### Include partials
 We have a main markdown file `examples/main.md`:
-```
+```markdown
 #+sh cat examples/main.md
 ```
 
@@ -48,7 +48,7 @@ It contains two commands `cat intro.md` and `uncomment.awk say.js ...`.
 
 `intro.md` (it is also located under the folder `examples`) looks like
 this:
-```
+```markdown
 #+sh cat examples/intro.md
 ```
 

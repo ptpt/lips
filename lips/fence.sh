@@ -6,5 +6,5 @@ if [ "$2" ]; then
 else
     cat
 fi
-echo
+# trailing newline is guaranteed by uncomment.awk
 echo '```'
