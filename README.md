@@ -37,11 +37,11 @@ say('hello world');
 Run the command below, which does 3 things:
 
 1. uncomment all comments in `say.js`
-2. highlight its code block, and
-3. ignore its test block
+2. highlight the code block, and
+3. ignore the test block
 
 ```
-$ uncomment.awk codeout="highlight.awk -vlang=javascript" examples/say.js | ignore.awk
+$ uncomment.awk codeout="highlight.sh javascript" examples/say.js | ignore.awk
 ```
 
 It outputs a markdown documentation:
@@ -54,6 +54,7 @@ var say = function(something) {
     // something goes to stdout
     console.log(something);
 };
+
 {% endhighlight %}
 
 ```
@@ -66,7 +67,7 @@ hello world
 
 #+sh cat intro.md
 
-#+sh uncomment.awk codeout="highlight.awk -vlang=javascript" say.js | ignore.awk
+#+sh uncomment.awk codeout="highlight.sh javascript" say.js | ignore.awk
 ```
 
 It contains two commands `cat intro.md` and `uncomment.awk say.js ...`.
@@ -103,6 +104,7 @@ var say = function(something) {
     // something goes to stdout
     console.log(something);
 };
+
 {% endhighlight %}
 
 ```
@@ -134,7 +136,7 @@ $ cat today
 Today is #+sh date +%Y-%m-%d
 
 $ sh.awk today
-Today is 2015-04-04
+Today is 2015-04-05
 ```
 
 ### `ignore.awk`: ignore blocks
@@ -153,16 +155,16 @@ usage: block.awk name=NAME FILENAME
 Print out a named block. A named block is a block between `#+block
 NAME` and `#+endblock`.
 
-### `fence.awk` and `highlight.awk`: wrap your code block
+### `fence.sh` and `highlight.sh`: wrap your code block
 
 ```
-usage: fence.awk -vlang=LANG FILENAME
-       highlight.awk -vlang=LANG FIELNAME
+usage: fence.sh LANG FILENAME
+       highlight.sh LANG FIELNAME
 ```
 
 Two helpers for generating markdown documentation in collaborate with
-`uncomment.awk`. `fence.awk` wraps your code block with
-triple-backtick syntax, while `highlight.awk` wraps with `{% highlight
+`uncomment.awk`. `fence.sh` wraps your code block with
+triple-backtick syntax, while `highlight.sh` wraps with `{% highlight
 LANG %}` and `{% endhighlight %}`.
 
 ## Development
@@ -174,13 +176,13 @@ Some principles:
 
 LoC of each program:
 ```
-       fence.awk 7
-   highlight.awk 10
+        fence.sh 10
+    highlight.sh 14
       ignore.awk 22
        block.awk 27
           sh.awk 30
    uncomment.awk 66
-           total 162
+           total 169
 ```
 
 Runing tests:

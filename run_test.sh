@@ -7,7 +7,7 @@ test_block () {
     test "$?" -eq 0 && let success+=1
 }
 
-test_it () {
+test_awk () {
     awk -f "./lips/$1.awk" "test/$1.input" | cmp "test/$1.output"
     test "$?" -eq 0 && let success+=1
 }
@@ -18,8 +18,8 @@ test_block kid1
 test_block escape
 test_block unfinished
 
-test_it sh
-test_it ignore
-test_it uncomment
+test_awk sh
+test_awk ignore
+test_awk uncomment
 
 echo $success tests succeed

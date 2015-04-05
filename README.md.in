@@ -26,16 +26,16 @@ written in Markdown.
 Run the command below, which does 3 things:
 
 1. uncomment all comments in `say.js`
-2. highlight its code block, and
-3. ignore its test block
+2. highlight the code block, and
+3. ignore the test block
 
 ```
-$ uncomment.awk codeout="highlight.awk -vlang=javascript" examples/say.js | ignore.awk
+$ uncomment.awk codeout="highlight.sh javascript" examples/say.js | ignore.awk
 ```
 
 It outputs a markdown documentation:
 ```markdown
-#+sh ignore.awk examples/say.js | uncomment.awk codeout="highlight.awk -vlang=javascript"
+#+sh ignore.awk examples/say.js | uncomment.awk codeout="highlight.sh javascript"
 ```
 
 ### Include partials
@@ -108,16 +108,16 @@ usage: block.awk name=NAME FILENAME
 Print out a named block. A named block is a block between `#+block
 NAME` and `#+endblock`.
 
-### `fence.awk` and `highlight.awk`: wrap your code block
+### `fence.sh` and `highlight.sh`: wrap your code block
 
 ```
-usage: fence.awk -vlang=LANG FILENAME
-       highlight.awk -vlang=LANG FIELNAME
+usage: fence.sh LANG FILENAME
+       highlight.sh LANG FIELNAME
 ```
 
 Two helpers for generating markdown documentation in collaborate with
-`uncomment.awk`. `fence.awk` wraps your code block with
-triple-backtick syntax, while `highlight.awk` wraps with `{% highlight
+`uncomment.awk`. `fence.sh` wraps your code block with
+triple-backtick syntax, while `highlight.sh` wraps with `{% highlight
 LANG %}` and `{% endhighlight %}`.
 
 ## Development
