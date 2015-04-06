@@ -17,8 +17,8 @@ This documentation is generated from
 $ make install
 ```
 
-It merely copies `lips/*` to `/usr/local/bin`. Feel free to pick only
-the ones you need.
+It merely copies `lips/*` to `/usr/local/bin`. If you don't need them
+all, feel free to pick only the ones you need.
 
 ## Examples
 
