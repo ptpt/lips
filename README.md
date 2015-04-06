@@ -117,11 +117,11 @@ var say = function(something) {
 usage: uncomment.awk [codeout] [comment="//"] FILENAME
 ```
 
-Uncomment `FILENAME` by simply removing the leading comment delimiter
+Uncomment `FILENAME` by simply removing the leading comment starter
 in each comment line, and pipe code blocks (the non-comment lines) to
 the command specified by `codeout`.
 
-You need to specify another comment delimiter when your source code is not
+You need to specify another comment starter when your source code is not
 commented by `//`.
 
 ### `sh.awk`: simple shell-base templating
@@ -137,7 +137,7 @@ $ cat today
 Today is #+sh date +%Y-%m-%d
 
 $ sh.awk today
-Today is 2015-04-05
+Today is 2015-04-06
 ```
 
 ### `ignore.awk`: ignore blocks
@@ -182,8 +182,8 @@ LoC of each program:
       ignore.awk 22
        block.awk 27
           sh.awk 30
-   uncomment.awk 66
-           total 169
+   uncomment.awk 61
+           total 164
 ```
 
 Runing tests:

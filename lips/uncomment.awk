@@ -1,7 +1,7 @@
 #!/usr/bin/awk -f
 
 BEGIN {
-    # comment delimiter
+    # comment starter
     comment = comment? comment : "//"
     # lines of code
     loc = 0
@@ -9,11 +9,6 @@ BEGIN {
 
 function is_comment() {
     return index($0, comment)==1 && $1==comment
-}
-
-function is_text()
-{
-    return is_comment() && $2!=comment;
 }
 
 function is_double_comment()
@@ -45,7 +40,7 @@ function process_code()
 }
 
 {
-    if (is_text()) {
+    if (is_comment() && !is_double_comment()) {
         # process previous code lines
         process_code()
         # print the uncommented line
@@ -53,7 +48,7 @@ function process_code()
         loc = 0
     } else {
         if (is_double_comment()) {
-            # remove the first comemnt delimiter
+            # remove the first comemnt starter
             sub(/^\s*\S+\s*/, "")
         }
         # accumulate code lines
