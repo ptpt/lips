@@ -7,12 +7,18 @@ Literate Programming Utils
 literate programming*, i.e. generating documentation from source
 code.
 
-To install `lips`, copy `lips/*` (or only the ones you need) to your
-`PATH` and make them executable.
-
 This documentation is generated from
 [its source](https://github.com/ptpt/lips/blob/master/README.md.in) by
 `lips`.
+
+## Installation
+
+```
+$ make install
+```
+
+It merely copies `lips/*` to `/usr/local/bin`. Feel free to pick only
+the ones you need.
 
 ## Examples
 
