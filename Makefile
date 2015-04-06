@@ -1,2 +1,7 @@
 README.md: README.md.in lips/* examples/*
-	sh.awk README.md.in > README.md
+	sh.awk $< > $@
+
+install:
+	install lips/* /usr/local/bin
+
+.PHONY: install
