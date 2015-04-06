@@ -135,9 +135,9 @@ LoC of each program:
 #+sh wc lips/* | sort -n | awk '{sub(/^.*\//, "", $4); printf("%16s %s\n", $4, $1)}'
 ```
 
-Runing tests:
+Run tests:
 ```
-./run_test.sh
+sh run_test.sh
 ```
 
 ## License

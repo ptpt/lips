@@ -186,9 +186,9 @@ LoC of each program:
            total 164
 ```
 
-Runing tests:
+Run tests:
 ```
-./run_test.sh
+sh run_test.sh
 ```
 
 ## License
