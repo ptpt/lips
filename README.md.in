@@ -71,63 +71,9 @@ It outputs:
 #+sh sh.awk examples/main.md
 ```
 
-## Usage
+## Usages
 
-### `uncomment.awk`: uncomment source code
-```
-usage: uncomment.awk [codeout] [comment="//"] FILENAME
-```
-
-Uncomment `FILENAME` by simply removing the leading comment starter
-in each comment line, and pipe code blocks (the non-comment lines) to
-the command specified by `codeout`.
-
-You need to specify another comment starter when your source code is not
-commented by `//`.
-
-### `sh.awk`: simple shell-base templating
-```
-usage: sh.awk [shell="/bin/sh"] FILENAME
-```
-
-Pipe commands after the mark `\#+sh` to `SHELL`, and replace each mark
-and command with its output.
-
-```
-$ cat today
-Today is \#+sh date +%Y-%m-%d
-
-$ sh.awk today
-#+sh echo "Today is #+sh date +%Y-%m-%d" | sh.awk
-```
-
-### `ignore.awk`: ignore blocks
-```
-usage: ignore.awk FILENAME
-```
-
-Like `cat FILENAME` but ignore blocks between `#+ignore` and
-`#+endignore`, and lines containing `#+ignoreline`.
-
-### `block.awk`: block extraction
-```
-usage: block.awk name=NAME FILENAME
-```
-
-Print out a named block. A named block is a block between `#+block
-NAME` and `#+endblock`.
-
-### `fence.sh` and `highlight.sh`: wrap your code block
-
-```
-usage: fence.sh LANG FILENAME
-       highlight.sh LANG FIELNAME
-```
-
-Two helpers for generating markdown documentation in collaborate with
-`uncomment.awk`. `fence.sh` wraps your code block with
-triple-backtick syntax, while `highlight.sh` wraps with `{% highlight
-LANG %}` and `{% endhighlight %}`.
+#+sh for cmd in lips/*; do block.awk name=usage "$cmd" | uncomment.awk comment="#"; done
 
 ## Development
 Some principles:

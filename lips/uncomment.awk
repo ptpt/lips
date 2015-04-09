@@ -1,5 +1,21 @@
 #!/usr/bin/awk -f
 
+# #+block usage
+
+# ### `uncomment.awk`: uncomment source code
+# ```
+# usage: uncomment.awk [codeout] [comment="//"] FILENAME
+# ```
+
+# Uncomment `FILENAME` by simply removing the leading comment starter
+# in each comment line, and pipe code blocks (the non-comment lines) to
+# the command specified by `codeout`.
+
+# You need to specify another comment starter when your source code is not
+# commented by `//`.
+
+# #+endblock
+
 BEGIN {
     # comment starter
     comment = comment? comment : "//"

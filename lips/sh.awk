@@ -1,5 +1,25 @@
 #!/usr/bin/awk -f
 
+#+block usage
+
+# ### `sh.awk`: simple shell-base templating
+# ```
+# usage: sh.awk [shell="/bin/sh"] FILENAME
+# ```
+
+# Pipe commands after the mark `\#+sh` to `SHELL`, and replace each mark
+# and command with its output.
+
+# ```
+# $ cat today
+# Today is \#+sh date +%Y-%m-%d
+
+# $ sh.awk today
+# #+sh echo "Today is #+sh date +%Y-%m-%d" | sh.awk
+# ```
+
+#+endblock
+
 BEGIN {
     shell = shell? shell : "/bin/sh"
     ALIGN = " | awk '{i=0; if (NR>1) while (i++<n) printf(\" \"); print}END{if (NR==0) printf \"\\n\"}' n="

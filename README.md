@@ -116,7 +116,71 @@ var say = function(something) {
 
 ```
 
-## Usage
+## Usages
+
+
+### `block.awk`: block extraction
+```
+usage: block.awk name=NAME FILENAME
+```
+
+Print out a named block. A named block is a block between `#+block
+NAME` and `#+endblock`.
+
+
+### `fence.sh`: wrap your code block in triple-backtick (or GitHub Markdown) style
+```
+usage: fence.sh LANG CODEBLOCK
+```
+
+Wrap CODEBLOCK with triple-backtick syntax. It is
+designed to be a helper for generating markdown documentation in
+collaborate with `uncomment.awk`.
+
+
+### `highlight.sh`: wrap your code block in Jekyll style
+```
+usage: highlight.sh LANG CODEBLOCK
+```
+
+Wrap CODEBLOCK with `{% highlight LANG %}` and `{%
+endhighlight %}`. It is designed to be a helper for generating
+markdown documentation in collaborate with `uncomment.awk`.
+
+
+### `ignore.awk`: ignore blocks
+```
+usage: ignore.awk FILENAME
+```
+
+Like `cat FILENAME` but ignore blocks between `#+ignore` and
+`#+endignore`, and lines containing `#+ignoreline`.
+
+
+### `sh.awk`: simple shell-base templating
+```
+usage: sh.awk [shell="/bin/sh"] FILENAME
+```
+
+Pipe commands after the mark `\#+sh` to `SHELL`, and replace each mark
+and command with its output.
+
+```
+$ cat today
+Today is \#+sh date +%Y-%m-%d
+
+$ sh.awk today
+#+sh echo "Today is #+sh date +%Y-%m-%d" | sh.awk
+```
+
+
+### `trim.awk`: trim blank lines
+```
+usage: trim.awk FILENAME
+```
+
+Trim blank lines in FILENAME
+
 
 ### `uncomment.awk`: uncomment source code
 ```
@@ -130,49 +194,6 @@ the command specified by `codeout`.
 You need to specify another comment starter when your source code is not
 commented by `//`.
 
-### `sh.awk`: simple shell-base templating
-```
-usage: sh.awk [shell="/bin/sh"] FILENAME
-```
-
-Pipe commands after the mark `#+sh` to `SHELL`, and replace each mark
-and command with its output.
-
-```
-$ cat today
-Today is #+sh date +%Y-%m-%d
-
-$ sh.awk today
-Today is 2015-04-06
-```
-
-### `ignore.awk`: ignore blocks
-```
-usage: ignore.awk FILENAME
-```
-
-Like `cat FILENAME` but ignore blocks between `#+ignore` and
-`#+endignore`, and lines containing `#+ignoreline`.
-
-### `block.awk`: block extraction
-```
-usage: block.awk name=NAME FILENAME
-```
-
-Print out a named block. A named block is a block between `#+block
-NAME` and `#+endblock`.
-
-### `fence.sh` and `highlight.sh`: wrap your code block
-
-```
-usage: fence.sh LANG FILENAME
-       highlight.sh LANG FIELNAME
-```
-
-Two helpers for generating markdown documentation in collaborate with
-`uncomment.awk`. `fence.sh` wraps your code block with
-triple-backtick syntax, while `highlight.sh` wraps with `{% highlight
-LANG %}` and `{% endhighlight %}`.
 
 ## Development
 Some principles:
@@ -183,13 +204,14 @@ Some principles:
 
 LoC of each program:
 ```
-        fence.sh 10
-    highlight.sh 14
-      ignore.awk 22
-       block.awk 27
-          sh.awk 30
-   uncomment.awk 61
-           total 164
+        fence.sh 23
+    highlight.sh 27
+        trim.awk 28
+      ignore.awk 34
+       block.awk 39
+          sh.awk 50
+   uncomment.awk 77
+           total 278
 ```
 
 Run tests:
