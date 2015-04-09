@@ -73,7 +73,7 @@ It outputs:
 
 ## Usages
 
-#+sh for cmd in lips/*; do block.awk name=usage "$cmd" | uncomment.awk comment="#"; done
+#+sh for cmd in lips/*; do block.awk name=usage "$cmd" | uncomment.awk comment="#" | sh.awk; done
 
 ## Development
 Some principles:

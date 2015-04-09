@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 
-# #+block usage
+#+block usage
 
 # ### `block.awk`: block extraction
 # ```
@@ -10,7 +10,7 @@
 # Print out a named block. A named block is a block between `#+block
 # NAME` and `#+endblock`.
 
-# #+endblock
+#+endblock
 
 BEGIN {
     level = 0

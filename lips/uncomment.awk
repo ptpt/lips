@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 
-# #+block usage
+#+block usage
 
 # ### `uncomment.awk`: uncomment source code
 # ```
@@ -14,7 +14,7 @@
 # You need to specify another comment starter when your source code is not
 # commented by `//`.
 
-# #+endblock
+#+endblock
 
 BEGIN {
     # comment starter

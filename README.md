@@ -162,15 +162,15 @@ Like `cat FILENAME` but ignore blocks between `#+ignore` and
 usage: sh.awk [shell="/bin/sh"] FILENAME
 ```
 
-Pipe commands after the mark `\#+sh` to `SHELL`, and replace each mark
+Pipe commands after the mark `#+sh` to `SHELL`, and replace each mark
 and command with its output.
 
 ```
 $ cat today
-Today is \#+sh date +%Y-%m-%d
+Today is #+sh date +%Y-%m-%d
 
 $ sh.awk today
-#+sh echo "Today is #+sh date +%Y-%m-%d" | sh.awk
+Today is 2015-04-09
 ```
 
 
