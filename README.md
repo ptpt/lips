@@ -170,7 +170,7 @@ $ cat today
 Today is #+sh date +%Y-%m-%d
 
 $ sh.awk today
-Today is 2015-04-09
+Today is 2021-08-02
 ```
 
 
@@ -210,8 +210,9 @@ LoC of each program:
       ignore.awk 34
        block.awk 39
           sh.awk 50
+         src.awk 76
    uncomment.awk 77
-           total 278
+           total 354
 ```
 
 Run tests:

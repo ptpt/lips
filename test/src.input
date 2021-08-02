@@ -1,0 +1,51 @@
+sort from new line:
+```
+#+begin_sh
+for x in 1 2 3 4; do
+    echo $x
+done
+#+end_sh
+```
+
+sort new line: #+begin_sh
+for x in 1 2 3 4; do
+    echo $x
+done
+#+end_sh
+
+sort aligned: #+begin_sh for x in 1 2 3 4; do
+echo $x
+done
+#+end_sh
+
+sort aligned new line:
+#+begin_sh for x in 1 2 3 4; do
+    echo $x
+done
+#+end_sh
+
+valid with new line: hello #+begin_sh echo -n tao
+end_sh+#, welcome
+
+valid with new line no space: hello#+begin_sh echo -n tao
+end_sh+#,welcome
+
+invalid with new line no space: hello#+begin_sh echo -n tao
+#+end_sh
+welcome
+
+valid: hello #+begin_sh echo -n tao end_sh+#, welcome
+valid no space outside: hello#+begin_sh echo -n tao end_sh+#,welcome
+Not valid no space inside: hello #+begin_shecho -n tao end_sh+#, welcome
+
+
+empty lines:
+#+begin_sh
+#+end_sh
+
+empty lines: #+begin_sh
+#+end_sh
+
+empty lines: #+begin_sh        end_sh+#world
+
+happy ending here
